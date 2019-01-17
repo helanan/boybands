@@ -10,10 +10,6 @@ var veggieElement = document.getElementById("vegetables");
 for (var loopTracker = 0; loopTracker < loopCount; loopTracker += 1) {
     bandNames = bands[loopTracker];
     veggieNames = vegetables[loopTracker];
-
-    console.log("veggieNames", veggieNames);
-    console.log("bandNames", bandNames);
-
     currentBand += "<ul>" +
       "<button class='ui right labeled icon button'>" +
   "<i class='right arrow icon'></i>" +
@@ -23,5 +19,4 @@ for (var loopTracker = 0; loopTracker < loopCount; loopTracker += 1) {
 
     bandElement.innerHTML = currentBand;
     veggieElement.innerHTML = currentVeggie;
-    console.log(currentBand);
 }
