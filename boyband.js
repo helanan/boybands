@@ -17,7 +17,7 @@ for (let i = 0; i < bands.length; i++) {
     currentBand += "<ul>" +
         "<button class='ui right labeled icon button band-btn' data-index='" + i + "'>" +
             "<i class='right arrow icon'></i>" +
-            "Next" +
+            "View Band" +
         "</button>" + bands[i].name + "</ul>";
     currentVeggie += "<ul><div class='ui labeled button' tabindex='0'>" +
         "<div class='ui red button'><i class='heart icon'></i> Like</div>" +
