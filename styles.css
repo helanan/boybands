@@ -1,3 +1,101 @@
+/* ===== CSS ALIEN STICKER ===== */
+.alien-sticker {
+    position: fixed;
+    left: 0.5%;
+    top: 48%;
+    transform: translateY(-50%) rotate(-8deg);
+    z-index: 501;
+    width: 72px;
+    pointer-events: none;
+    user-select: none;
+    filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.7));
+}
+
+.alien-head {
+    width: 72px;
+    height: 84px;
+    background: #39ff14;
+    border-radius: 50% 50% 44% 44%;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #000;
+    position: relative;
+    margin-top: 34px;
+}
+
+/* Antenna stem */
+.alien-antenna {
+    position: absolute;
+    width: 6px;
+    height: 30px;
+    background: #39ff14;
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Antenna ball */
+.alien-antenna::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #39ff14;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+    border-radius: 50%;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Eyes */
+.alien-eye {
+    position: absolute;
+    width: 24px;
+    height: 28px;
+    background: #000;
+    border-radius: 50%;
+    top: 20px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #000;
+}
+
+/* Eye shine */
+.alien-eye::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+}
+
+.alien-eye--left  { left: 8px; }
+.alien-eye--right { right: 8px; }
+
+/* Mouth */
+.alien-mouth {
+    position: absolute;
+    width: 26px;
+    height: 12px;
+    border: 4px solid #000;
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    box-shadow: 0 4px 0 0 #000;
+}
+
+@media (max-width: 768px) {
+    .alien-sticker { display: none; }
+}
+
 /* ===== 90s STICKERS ===== */
 .sticker {
     position: fixed;
