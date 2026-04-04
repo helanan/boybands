@@ -144,8 +144,8 @@ function attachListeners() {
 
     document.querySelectorAll(".veggie-btn").forEach(function(btn) {
         btn.addEventListener("click", function() {
-            const b = this.dataset.band;
-            const v = this.dataset.veggie;
+            const b = parseInt(this.dataset.band);
+            const v = parseInt(this.dataset.veggie);
             scores[b][v]++;
             const el = document.getElementById("score-" + b + "-" + v);
             el.textContent = " x" + scores[b][v];
