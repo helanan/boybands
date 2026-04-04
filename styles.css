@@ -176,6 +176,16 @@ h5 {
     box-shadow: 4px 4px 0 #9b59b6;
 }
 
+#modal-desc {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 14px;
+    line-height: 1.5;
+    border-top: 2px dashed #ff69b4;
+    padding-top: 12px;
+}
+
 .modal-close-btn.ui.button {
     position: absolute !important;
     top: 10px !important;
