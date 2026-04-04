@@ -1,3 +1,33 @@
+/* ===== 90s STICKERS ===== */
+.sticker {
+    position: fixed;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1.5px;
+    padding: 8px 14px;
+    border-radius: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.5);
+    pointer-events: none;
+    user-select: none;
+    z-index: 500;
+    white-space: nowrap;
+}
+
+.s1  { font-size: 1rem;   top: 4%;   left: 1%;   background: #FFE600; color: #ff1493; transform: rotate(-12deg); }
+.s2  { font-size: 1.1rem; top: 14%;  right: 0%;  background: #ff1493; color: #FFE600; transform: rotate(9deg);   border-radius: 12px; }
+.s3  { font-size: 1.4rem; top: 28%;  left: 0%;   background: #9b59b6; color: #FFE600; transform: rotate(-6deg);  border-radius: 50%; padding: 12px 16px; }
+.s4  { font-size: 0.95rem;top: 42%;  right: 0.5%;background: #00bfff; color: #fff;    transform: rotate(11deg);  }
+.s5  { font-size: 1rem;   top: 57%;  left: 0.5%; background: #ff69b4; color: #fff;    transform: rotate(-9deg);  border-radius: 8px; }
+.s6  { font-size: 0.9rem; top: 68%;  right: 0%;  background: #FFE600; color: #9b59b6; transform: rotate(6deg);   }
+.s7  { font-size: 0.85rem;top: 78%;  left: 0%;   background: #ff1493; color: #fff;    transform: rotate(-13deg); border-radius: 10px; }
+.s8  { font-size: 1rem;   top: 20%;  right: 0.5%;background: #da70d6; color: #fff;    transform: rotate(7deg);   border-radius: 50%; padding: 10px 14px; }
+.s9  { font-size: 0.9rem; bottom: 18%;left: 0.5%; background: #ff4500; color: #FFE600; transform: rotate(-8deg); }
+.s10 { font-size: 1rem;   bottom: 8%; right: 0.5%;background: #9b59b6; color: #FFE600; transform: rotate(10deg); border-radius: 12px; }
+
+@media (max-width: 768px) {
+    .sticker { display: none; }
+}
+
 /* ===== BACKGROUND ===== */
 body {
     background: linear-gradient(135deg, #ff69b4 0%, #da70d6 30%, #9b59b6 60%, #ff1493 100%);
