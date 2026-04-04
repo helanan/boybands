@@ -1,9 +1,9 @@
 const bands = [
-  { name: "Boyz II Men", img: "https://placehold.co/400x300?text=Boyz+II+Men" },
-  { name: "NSync", img: "https://placehold.co/400x300?text=NSync" },
-  { name: "New Kids on the Block", img: "https://placehold.co/400x300?text=New+Kids+on+the+Block" },
-  { name: "98 Degrees", img: "https://placehold.co/400x300?text=98+Degrees" },
-  { name: "One Direction", img: "https://placehold.co/400x300?text=One+Direction" },
+  { name: "Boyz II Men", img: "https://upload.wikimedia.org/wikipedia/commons/0/02/BoyzIIMenHWoFJan2012.jpg" },
+  { name: "NSync", img: "https://upload.wikimedia.org/wikipedia/commons/b/be/NSYNC.jpg" },
+  { name: "New Kids on the Block", img: "https://upload.wikimedia.org/wikipedia/commons/d/de/New_Kids_on_the_Block.JPG" },
+  { name: "98 Degrees", img: "https://upload.wikimedia.org/wikipedia/commons/4/47/98_Degrees_Mixtape.jpg" },
+  { name: "One Direction", img: "https://upload.wikimedia.org/wikipedia/commons/4/40/One_Direction_2012_Stockholm.jpg" },
 ];
 const vegetables = ["Carrots", "Kale", "Zucchini", "Broccoli", "Squash"];
 
