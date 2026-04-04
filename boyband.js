@@ -62,10 +62,10 @@ let currentVeggie = "";
 for (let i = 0; i < bands.length; i++) {
     currentBand += "<div class='band-card'>" +
         "<div class='band-card-top'>" +
+            "<span class='band-name'>" + bands[i].name + "</span>" +
             "<button class='ui right labeled icon button band-btn' data-index='" + i + "'>" +
                 "<i class='right arrow icon'></i>View Band" +
             "</button>" +
-            "<span class='band-name'>" + bands[i].name + "</span>" +
         "</div>" +
         "<div class='band-mini-stats'>" +
             "<span>📅 " + bands[i].formed + "</span>" +
