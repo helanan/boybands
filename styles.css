@@ -1,3 +1,227 @@
+/* ===== SHARED CSS ART STICKER BASE ===== */
+.css-sticker {
+    position: fixed;
+    z-index: 501;
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .css-sticker { display: none; }
+}
+
+/* ===== STAR ===== */
+.star-sticker {
+    top: 5%;
+    right: 4.5%;
+    width: 55px;
+    height: 55px;
+    transform: rotate(20deg);
+}
+
+.star-l {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    top: 0; left: 0;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform-origin: center;
+}
+.star-b { background: #000; transform: scale(1.22); }
+.star-w { background: #fff; transform: scale(1.11); }
+.star-f { background: #FFE600; }
+
+/* ===== 60s FLOWER ===== */
+.flower-sticker {
+    top: 18%;
+    left: 4%;
+    width: 72px;
+    height: 72px;
+    transform: rotate(-8deg);
+}
+
+.flower-sticker .petal {
+    position: absolute;
+    width: 20px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -32px;
+    transform-origin: 50% 100%;
+}
+.fp1 { background: #ff69b4; transform: rotate(0deg); }
+.fp2 { background: #ff8c00; transform: rotate(60deg); }
+.fp3 { background: #FFE600; transform: rotate(120deg); }
+.fp4 { background: #ff69b4; transform: rotate(180deg); }
+.fp5 { background: #ff8c00; transform: rotate(240deg); }
+.fp6 { background: #FFE600; transform: rotate(300deg); }
+
+.flower-center {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #fffde0;
+    border: 3px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* ===== PLATFORM SHOE ===== */
+.shoe-sticker {
+    bottom: 28%;
+    left: 4%;
+    transform: rotate(10deg);
+}
+
+.shoe-upper {
+    width: 64px;
+    height: 34px;
+    background: #ff1493;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+    border-radius: 60% 20% 0 0 / 100% 60% 0 0;
+    position: relative;
+    z-index: 1;
+    margin-left: 8px;
+}
+
+.shoe-sole {
+    width: 80px;
+    height: 22px;
+    background: #fff;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+    border-radius: 6px 8px 10px 6px;
+    margin-top: -4px;
+    position: relative;
+    z-index: 0;
+}
+
+/* ===== MICROPHONE ===== */
+.mic-sticker {
+    top: 60%;
+    right: 4%;
+    transform: rotate(-8deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mic-head {
+    width: 38px;
+    height: 46px;
+    background: #d0d0d0;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+    border-radius: 50% 50% 40% 40%;
+}
+
+.mic-grip {
+    width: 18px;
+    height: 10px;
+    background: #555;
+    border-left: 4px solid #000;
+    border-right: 4px solid #000;
+    box-shadow: 0 0 0 2px #fff, 2px 0 0 2px #fff, -2px 0 0 2px #fff;
+    margin-top: -2px;
+}
+
+.mic-handle {
+    width: 16px;
+    height: 38px;
+    background: #ff1493;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+    border-radius: 3px;
+    margin-top: -2px;
+}
+
+/* ===== RED LIPS ===== */
+.lips-sticker {
+    bottom: 6%;
+    left: 4%;
+    transform: rotate(-5deg);
+}
+
+.lips-wrap {
+    position: relative;
+    width: 62px;
+    height: 44px;
+    filter:
+        drop-shadow(0 3px 0 #fff) drop-shadow(3px 0 0 #fff)
+        drop-shadow(0 -3px 0 #fff) drop-shadow(-3px 0 0 #fff)
+        drop-shadow(2px 2px 0 #fff) drop-shadow(-2px -2px 0 #fff)
+        drop-shadow(0 6px 0 #000) drop-shadow(6px 0 0 #000)
+        drop-shadow(0 -6px 0 #000) drop-shadow(-6px 0 0 #000)
+        drop-shadow(4px 4px 0 #000) drop-shadow(-4px -4px 0 #000);
+}
+
+.lip-tl, .lip-tr {
+    position: absolute;
+    width: 31px;
+    height: 24px;
+    background: #ee0000;
+    top: 0;
+}
+.lip-tl { border-radius: 50% 8px 0 0; left: 0; }
+.lip-tr { border-radius: 8px 50% 0 0; right: 0; }
+
+.lip-bot {
+    position: absolute;
+    width: 62px;
+    height: 30px;
+    background: #cc0000;
+    border-radius: 0 0 50% 50%;
+    bottom: 0;
+}
+
+/* ===== SMILEY FACE ===== */
+.smiley-sticker {
+    top: 76%;
+    left: 4%;
+    transform: rotate(12deg);
+}
+
+.smiley-face {
+    width: 58px;
+    height: 58px;
+    background: #FFE600;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.smiley-eye {
+    position: absolute;
+    width: 10px;
+    height: 13px;
+    background: #000;
+    border-radius: 50%;
+    top: 15px;
+}
+.se-l { left: 12px; }
+.se-r { right: 12px; }
+
+.smiley-mouth {
+    position: absolute;
+    width: 30px;
+    height: 14px;
+    border: 4px solid #000;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* ===== CSS ALIEN STICKER ===== */
 .alien-sticker {
     position: fixed;
