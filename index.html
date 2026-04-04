@@ -4,7 +4,7 @@
   <title>Boy Bands</title>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" rel="stylesheet">
-  <link href="styles.css?v=2" rel="stylesheet">
+  <link href="styles.css?v=3" rel="stylesheet">
 </head>
 <body>
   <div class="magazine-header">
@@ -20,13 +20,39 @@
     <div id="vegetables"></div>
   </div>
   <div id="band-modal" class="band-modal-overlay">
-    <div class="band-modal-content">
-      <button id="modal-close" class="ui icon button modal-close-btn">
-        <i class="close icon"></i>
-      </button>
-      <h3 id="modal-title"></h3>
-      <img id="modal-img" src="" alt="">
-      <p id="modal-desc"></p>
+    <div class="trading-card-wrap">
+      <div class="band-modal-content">
+        <button id="modal-close" class="ui icon button modal-close-btn">
+          <i class="close icon"></i>
+        </button>
+        <div class="card-header">
+          <h3 id="modal-title"></h3>
+          <span class="card-rarity">★ LEGENDARY ★</span>
+        </div>
+        <div class="card-img-frame">
+          <img id="modal-img" src="" alt="">
+        </div>
+        <p id="modal-desc"></p>
+        <div class="card-stats">
+          <div class="card-stat">
+            <span class="stat-label">Formed</span>
+            <span class="stat-val" id="stat-formed"></span>
+          </div>
+          <div class="card-stat">
+            <span class="stat-label">Members</span>
+            <span class="stat-val" id="stat-members"></span>
+          </div>
+          <div class="card-stat">
+            <span class="stat-label">Origin</span>
+            <span class="stat-val" id="stat-origin"></span>
+          </div>
+          <div class="card-stat">
+            <span class="stat-label">Hit Song</span>
+            <span class="stat-val" id="stat-hit"></span>
+          </div>
+        </div>
+        <div class="card-footer">BOY BAND FEVER © 1999 &nbsp;|&nbsp; <span id="card-number"></span></div>
+      </div>
     </div>
   </div>
 

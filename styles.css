@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&display=swap');
-
 /* ===== BACKGROUND ===== */
 body {
     background: linear-gradient(135deg, #ff69b4 0%, #da70d6 30%, #9b59b6 60%, #ff1493 100%);
@@ -79,19 +77,37 @@ h5 {
     margin: 25px 0 10px !important;
 }
 
-/* ===== LIST ROWS ===== */
-#boy_bands ul,
-#vegetables ul {
-    list-style: none;
-    padding: 8px 4px;
-    margin: 0;
+/* ===== BAND MINI CARDS ===== */
+.band-card {
+    background: linear-gradient(135deg, #fff0f8, #f5f0ff);
+    border: 2px solid #ff69b4;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    box-shadow: 3px 3px 0 #da70d6;
+}
+
+.band-card-top {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.band-name {
     font-family: 'Fredoka One', cursive;
     font-size: 1.1rem;
-    color: #444;
-    border-bottom: 1px dotted #da70d6;
+    color: #6c0099;
+}
+
+.band-mini-stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #ff69b4;
+    font-size: 0.82rem;
+    color: #888;
+    font-family: 'Fredoka One', cursive;
 }
 
 /* ===== VIEW BAND BUTTON ===== */
@@ -105,11 +121,26 @@ h5 {
     box-shadow: 3px 3px 0 #9b59b6 !important;
     transform: rotate(-1.5deg);
     transition: transform 0.15s, box-shadow 0.15s !important;
+    white-space: nowrap;
 }
 
 .band-btn.ui.button:hover {
     transform: rotate(1.5deg) scale(1.08) !important;
     box-shadow: 5px 5px 0 #6c0099 !important;
+}
+
+/* ===== VEGETABLE LIST ===== */
+#vegetables ul {
+    list-style: none;
+    padding: 8px 4px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    color: #444;
+    border-bottom: 1px dotted #da70d6;
 }
 
 /* ===== MODAL OVERLAY ===== */
@@ -120,79 +151,148 @@ h5 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(108, 0, 153, 0.82);
+    background: rgba(108, 0, 153, 0.85);
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .band-modal-overlay.active {
     display: flex;
 }
 
-/* ===== MODAL CARD ===== */
-.band-modal-content {
-    background: white;
-    padding: 35px 30px 25px;
-    border-radius: 18px;
-    max-width: 480px;
-    width: 90%;
-    text-align: center;
-    position: relative;
-    border: 5px solid #ff1493;
-    box-shadow: 8px 8px 0 #9b59b6;
+/* ===== TRADING CARD ===== */
+.trading-card-wrap {
+    background: linear-gradient(135deg, #FFE600, #ff1493, #9b59b6, #00bfff, #FFE600);
+    background-size: 300% 300%;
+    animation: holographic 4s linear infinite;
+    padding: 5px;
+    border-radius: 22px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.6), 0 0 60px rgba(155, 89, 182, 0.4);
 }
 
-.band-modal-content::before {
-    content: '⭐ EXCLUSIVE ⭐';
+@keyframes holographic {
+    0%   { background-position: 0% 50%; filter: hue-rotate(0deg); }
+    50%  { background-position: 100% 50%; filter: hue-rotate(180deg); }
+    100% { background-position: 0% 50%; filter: hue-rotate(360deg); }
+}
+
+.band-modal-content {
+    background: white;
+    border-radius: 18px;
+    padding: 0 0 16px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* Card header bar */
+.card-header {
+    background: linear-gradient(135deg, #ff1493, #9b59b6);
+    padding: 14px 50px 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.8rem !important;
+    color: #FFE600 !important;
+    text-shadow: 2px 2px 0 #6c0099 !important;
+    letter-spacing: 3px !important;
+    margin: 0 !important;
+}
+
+.card-rarity {
     font-family: 'Bangers', cursive;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    color: #FFE600;
     letter-spacing: 2px;
-    background: #FFE600;
-    color: #ff1493;
-    padding: 4px 16px;
-    border-radius: 20px;
-    border: 2px solid #ff1493;
-    position: absolute;
-    top: -16px;
-    left: 50%;
-    transform: translateX(-50%);
     white-space: nowrap;
 }
 
-#modal-title {
-    font-family: 'Bangers', cursive;
-    font-size: 2.2rem;
-    color: #ff1493;
-    text-shadow: 2px 2px 0 #da70d6;
-    letter-spacing: 3px;
-    margin: 10px 0 12px;
+/* Card image */
+.card-img-frame {
+    padding: 12px 16px 0;
+    position: relative;
 }
 
-.band-modal-content img {
-    max-width: 100%;
+.card-img-frame img {
+    width: 100%;
     border-radius: 10px;
-    border: 4px solid #ff69b4;
-    box-shadow: 4px 4px 0 #9b59b6;
+    border: 3px solid #ff69b4;
+    display: block;
 }
 
+/* Description */
 #modal-desc {
     font-family: 'Fredoka One', cursive;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #555;
-    margin-top: 14px;
+    margin: 12px 16px 0;
     line-height: 1.5;
-    border-top: 2px dashed #ff69b4;
-    padding-top: 12px;
+    text-align: left;
 }
 
+/* Stats grid */
+.card-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 16px 0;
+}
+
+.card-stat {
+    background: linear-gradient(135deg, #fff0f8, #f5f0ff);
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    padding: 7px 10px;
+    text-align: left;
+}
+
+.stat-label {
+    display: block;
+    font-family: 'Bangers', cursive;
+    font-size: 0.75rem;
+    color: #ff1493;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.stat-val {
+    display: block;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.95rem;
+    color: #6c0099;
+}
+
+/* Card footer */
+.card-footer {
+    font-family: 'Bangers', cursive;
+    font-size: 0.75rem;
+    color: #aaa;
+    letter-spacing: 2px;
+    margin-top: 14px;
+    border-top: 1px dashed #ff69b4;
+    padding-top: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
+}
+
+/* Close button */
 .modal-close-btn.ui.button {
     position: absolute !important;
     top: 10px !important;
     right: 10px !important;
-    background: #ff1493 !important;
-    color: white !important;
+    background: rgba(255,255,255,0.2) !important;
+    color: #FFE600 !important;
     border-radius: 50% !important;
     padding: 8px !important;
-    box-shadow: 2px 2px 0 #6c0099 !important;
+    z-index: 10;
 }

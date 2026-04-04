@@ -2,29 +2,55 @@ const bands = [
   {
     name: "Boyz II Men",
     img: "https://upload.wikimedia.org/wikipedia/commons/0/02/BoyzIIMenHWoFJan2012.jpg",
-    desc: "Formed in Philadelphia in 1988, Boyz II Men are the best-selling R&B group of all time. Known for silky harmonies and massive ballads like 'End of the Road' and 'I'll Make Love to You', they ruled the charts throughout the 90s. 🎤"
+    desc: "Formed in Philadelphia in 1988, Boyz II Men are the best-selling R&B group of all time. Known for silky harmonies and massive ballads like 'End of the Road' and 'I'll Make Love to You', they ruled the charts throughout the 90s. 🎤",
+    formed: 1988,
+    members: 4,
+    origin: "Philadelphia, PA",
+    hit: "End of the Road",
+    num: "#001"
   },
   {
     name: "NSync",
     img: "https://upload.wikimedia.org/wikipedia/commons/b/be/NSYNC.jpg",
-    desc: "Formed in Orlando in 1995, *NSYNC became one of the biggest boy bands ever. Featuring Justin Timberlake, they sold over 70 million records worldwide with hits like 'Bye Bye Bye' and 'Tearin' Up My Heart'. 💫"
+    desc: "Formed in Orlando in 1995, *NSYNC became one of the biggest boy bands ever. Featuring Justin Timberlake, they sold over 70 million records worldwide with hits like 'Bye Bye Bye' and 'Tearin' Up My Heart'. 💫",
+    formed: 1995,
+    members: 5,
+    origin: "Orlando, FL",
+    hit: "Bye Bye Bye",
+    num: "#002"
   },
   {
     name: "New Kids on the Block",
     img: "https://upload.wikimedia.org/wikipedia/commons/d/de/New_Kids_on_the_Block.JPG",
-    desc: "The original 90s boy band! Formed in Boston in 1984, NKOTB pioneered the boy band blueprint with massive hits like 'Hangin' Tough' and 'Step by Step'. They literally started it all. 🔥"
+    desc: "The original 90s boy band! Formed in Boston in 1984, NKOTB pioneered the boy band blueprint with massive hits like 'Hangin' Tough' and 'Step by Step'. They literally started it all. 🔥",
+    formed: 1984,
+    members: 5,
+    origin: "Boston, MA",
+    hit: "Hangin' Tough",
+    num: "#003"
   },
   {
     name: "98 Degrees",
     img: "https://upload.wikimedia.org/wikipedia/commons/4/47/98_Degrees_Mixtape.jpg",
-    desc: "Formed in LA in 1996, 98 Degrees featured Nick and Drew Lachey alongside Jeff Timmons and Justin Jeffre. Their romantic hits like 'Because of You' and 'The Hardest Thing' made them every girl's dream. 💘"
+    desc: "Formed in LA in 1996, 98 Degrees featured Nick and Drew Lachey alongside Jeff Timmons and Justin Jeffre. Their romantic hits like 'Because of You' and 'The Hardest Thing' made them every girl's dream. 💘",
+    formed: 1996,
+    members: 4,
+    origin: "Los Angeles, CA",
+    hit: "Because of You",
+    num: "#004"
   },
   {
     name: "One Direction",
     img: "https://upload.wikimedia.org/wikipedia/commons/4/40/One_Direction_2012_Stockholm.jpg",
-    desc: "Formed on The X Factor UK in 2010, One Direction — Harry Styles, Niall Horan, Liam Payne, Louis Tomlinson, and Zayn Malik — became a global phenomenon with anthems like 'What Makes You Beautiful'. ⭐"
+    desc: "Formed on The X Factor UK in 2010, One Direction — Harry Styles, Niall Horan, Liam Payne, Louis Tomlinson, and Zayn Malik — became a global phenomenon with anthems like 'What Makes You Beautiful'. ⭐",
+    formed: 2010,
+    members: 5,
+    origin: "London, UK",
+    hit: "What Makes You Beautiful",
+    num: "#005"
   },
 ];
+
 const vegetables = ["Carrots", "Kale", "Zucchini", "Broccoli", "Squash"];
 
 const bandElement = document.getElementById("boy_bands");
@@ -34,11 +60,20 @@ let currentBand = "";
 let currentVeggie = "";
 
 for (let i = 0; i < bands.length; i++) {
-    currentBand += "<ul>" +
-        "<button class='ui right labeled icon button band-btn' data-index='" + i + "'>" +
-            "<i class='right arrow icon'></i>" +
-            "View Band" +
-        "</button>" + bands[i].name + "</ul>";
+    currentBand += "<div class='band-card'>" +
+        "<div class='band-card-top'>" +
+            "<button class='ui right labeled icon button band-btn' data-index='" + i + "'>" +
+                "<i class='right arrow icon'></i>View Band" +
+            "</button>" +
+            "<span class='band-name'>" + bands[i].name + "</span>" +
+        "</div>" +
+        "<div class='band-mini-stats'>" +
+            "<span>📅 " + bands[i].formed + "</span>" +
+            "<span>👥 " + bands[i].members + " members</span>" +
+            "<span>📍 " + bands[i].origin + "</span>" +
+        "</div>" +
+    "</div>";
+
     currentVeggie += "<ul><div class='ui labeled button' tabindex='0'>" +
         "<div class='ui red button'><i class='heart icon'></i> Like</div>" +
         "<a class='ui basic red left pointing label'>" + i + "</a>" +
@@ -52,15 +87,26 @@ const modal = document.getElementById("band-modal");
 const modalImg = document.getElementById("modal-img");
 const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-desc");
+const modalFormed = document.getElementById("stat-formed");
+const modalMembers = document.getElementById("stat-members");
+const modalOrigin = document.getElementById("stat-origin");
+const modalHit = document.getElementById("stat-hit");
+const modalNum = document.getElementById("card-number");
 const closeBtn = document.getElementById("modal-close");
 
 document.querySelectorAll(".band-btn").forEach(function(btn) {
     btn.addEventListener("click", function() {
         const idx = this.dataset.index;
-        modalImg.src = bands[idx].img;
-        modalImg.alt = bands[idx].name;
-        modalTitle.textContent = bands[idx].name;
-        modalDesc.textContent = bands[idx].desc;
+        const band = bands[idx];
+        modalImg.src = band.img;
+        modalImg.alt = band.name;
+        modalTitle.textContent = band.name;
+        modalDesc.textContent = band.desc;
+        modalFormed.textContent = band.formed;
+        modalMembers.textContent = band.members;
+        modalOrigin.textContent = band.origin;
+        modalHit.textContent = band.hit;
+        modalNum.textContent = band.num + " / 005";
         modal.classList.add("active");
     });
 });
