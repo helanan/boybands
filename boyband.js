@@ -62,7 +62,33 @@ const veggies = [
 // scores[bandIndex][veggieIndex] = count
 const scores = bands.map(() => veggies.map(() => 0));
 
+const veggieColors = ["#FF8C00", "#5aab3e", "#7dc97d", "#3D9970", "#e8621a"];
+
 const bandElement = document.getElementById("boy_bands");
+const chartElement = document.getElementById("veggie-chart");
+
+function renderChart() {
+    const totals = scores.map(s => s.reduce((a, b) => a + b, 0));
+    const max = Math.max(...totals, 1);
+
+    chartElement.innerHTML = bands.map(function(band, i) {
+        const segments = veggies.map(function(v, j) {
+            const w = (scores[i][j] / max) * 100;
+            return w > 0
+                ? "<div class='chart-segment' style='width:" + w + "%;background:" + veggieColors[j] + "' title='" + v.name + ": " + scores[i][j] + "'></div>"
+                : "";
+        }).join("");
+
+        const total = totals[i];
+        return "<div class='chart-row'>" +
+            "<span class='chart-label'>" + band.name + "</span>" +
+            "<div class='chart-bar-wrap'>" +
+                (total > 0 ? segments : "<div class='chart-empty'>no votes yet</div>") +
+            "</div>" +
+            "<span class='chart-count'>" + (total > 0 ? total + " 🥦" : "—") + "</span>" +
+        "</div>";
+    }).join("");
+}
 
 function renderBands() {
     let html = "";
@@ -125,6 +151,7 @@ function attachListeners() {
             el.textContent = " x" + scores[b][v];
             this.classList.add("veggie-pop");
             this.addEventListener("animationend", () => this.classList.remove("veggie-pop"), { once: true });
+            renderChart();
         });
     });
 }
@@ -151,3 +178,4 @@ modal.addEventListener("click", function(e) {
 });
 
 renderBands();
+renderChart();
