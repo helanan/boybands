@@ -110,6 +110,58 @@ h5 {
     font-family: 'Fredoka One', cursive;
 }
 
+/* ===== VEGGIE RATING ===== */
+.veggie-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #ff69b4;
+    flex-wrap: wrap;
+}
+
+.veggie-rating-label {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.78rem;
+    color: #aaa;
+    margin-right: 2px;
+}
+
+.veggie-btn {
+    background: linear-gradient(135deg, #fff0f8, #f5f0ff);
+    border: 2px solid #ff69b4;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    color: #6c0099;
+    transition: transform 0.1s;
+    box-shadow: 2px 2px 0 #da70d6;
+}
+
+.veggie-btn:hover {
+    transform: scale(1.15);
+    background: linear-gradient(135deg, #ffe0f5, #ece0ff);
+}
+
+.veggie-count {
+    font-size: 0.78rem;
+    color: #ff1493;
+    font-weight: bold;
+}
+
+@keyframes veggiePop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.4) rotate(-10deg); }
+    100% { transform: scale(1); }
+}
+
+.veggie-pop {
+    animation: veggiePop 0.3s ease;
+}
+
 /* ===== VIEW BAND BUTTON ===== */
 .band-btn.ui.button {
     background: linear-gradient(135deg, #ff1493, #ff69b4) !important;

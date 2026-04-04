@@ -51,37 +51,83 @@ const bands = [
   },
 ];
 
-const vegetables = ["Carrots", "Kale", "Zucchini", "Broccoli", "Squash"];
+const veggies = [
+  { name: "Carrots",  emoji: "🥕" },
+  { name: "Kale",     emoji: "🥬" },
+  { name: "Zucchini", emoji: "🥒" },
+  { name: "Broccoli", emoji: "🥦" },
+  { name: "Squash",   emoji: "🎃" },
+];
+
+// scores[bandIndex][veggieIndex] = count
+const scores = bands.map(() => veggies.map(() => 0));
 
 const bandElement = document.getElementById("boy_bands");
-const veggieElement = document.getElementById("vegetables");
 
-let currentBand = "";
-let currentVeggie = "";
+function renderBands() {
+    let html = "";
+    for (let i = 0; i < bands.length; i++) {
+        let veggieBtns = veggies.map(function(v, j) {
+            return "<button class='veggie-btn' data-band='" + i + "' data-veggie='" + j + "'>" +
+                v.emoji +
+                "<span class='veggie-count' id='score-" + i + "-" + j + "'>" +
+                    (scores[i][j] > 0 ? " x" + scores[i][j] : "") +
+                "</span>" +
+            "</button>";
+        }).join("");
 
-for (let i = 0; i < bands.length; i++) {
-    currentBand += "<div class='band-card'>" +
-        "<div class='band-card-top'>" +
-            "<span class='band-name'>" + bands[i].name + "</span>" +
-            "<button class='ui right labeled icon button band-btn' data-index='" + i + "'>" +
-                "<i class='right arrow icon'></i>View Band" +
-            "</button>" +
-        "</div>" +
-        "<div class='band-mini-stats'>" +
-            "<span>📅 " + bands[i].formed + "</span>" +
-            "<span>👥 " + bands[i].members + " members</span>" +
-            "<span>📍 " + bands[i].origin + "</span>" +
-        "</div>" +
-    "</div>";
-
-    currentVeggie += "<ul><div class='ui labeled button' tabindex='0'>" +
-        "<div class='ui red button'><i class='heart icon'></i> Like</div>" +
-        "<a class='ui basic red left pointing label'>" + i + "</a>" +
-        "</div>" + vegetables[i] + "</ul>";
+        html += "<div class='band-card'>" +
+            "<div class='band-card-top'>" +
+                "<span class='band-name'>" + bands[i].name + "</span>" +
+                "<button class='ui right labeled icon button band-btn' data-index='" + i + "'>" +
+                    "<i class='right arrow icon'></i>View Band" +
+                "</button>" +
+            "</div>" +
+            "<div class='band-mini-stats'>" +
+                "<span>📅 " + bands[i].formed + "</span>" +
+                "<span>👥 " + bands[i].members + " members</span>" +
+                "<span>📍 " + bands[i].origin + "</span>" +
+            "</div>" +
+            "<div class='veggie-rating'>" +
+                "<span class='veggie-rating-label'>Rate with veggies:</span>" +
+                veggieBtns +
+            "</div>" +
+        "</div>";
+    }
+    bandElement.innerHTML = html;
+    attachListeners();
 }
 
-bandElement.innerHTML = currentBand;
-veggieElement.innerHTML = currentVeggie;
+function attachListeners() {
+    document.querySelectorAll(".band-btn").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            const idx = this.dataset.index;
+            const band = bands[idx];
+            modalImg.src = band.img;
+            modalImg.alt = band.name;
+            modalTitle.textContent = band.name;
+            modalDesc.textContent = band.desc;
+            modalFormed.textContent = band.formed;
+            modalMembers.textContent = band.members;
+            modalOrigin.textContent = band.origin;
+            modalHit.textContent = band.hit;
+            modalNum.textContent = band.num + " / 005";
+            modal.classList.add("active");
+        });
+    });
+
+    document.querySelectorAll(".veggie-btn").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            const b = this.dataset.band;
+            const v = this.dataset.veggie;
+            scores[b][v]++;
+            const el = document.getElementById("score-" + b + "-" + v);
+            el.textContent = " x" + scores[b][v];
+            this.classList.add("veggie-pop");
+            this.addEventListener("animationend", () => this.classList.remove("veggie-pop"), { once: true });
+        });
+    });
+}
 
 const modal = document.getElementById("band-modal");
 const modalImg = document.getElementById("modal-img");
@@ -94,23 +140,6 @@ const modalHit = document.getElementById("stat-hit");
 const modalNum = document.getElementById("card-number");
 const closeBtn = document.getElementById("modal-close");
 
-document.querySelectorAll(".band-btn").forEach(function(btn) {
-    btn.addEventListener("click", function() {
-        const idx = this.dataset.index;
-        const band = bands[idx];
-        modalImg.src = band.img;
-        modalImg.alt = band.name;
-        modalTitle.textContent = band.name;
-        modalDesc.textContent = band.desc;
-        modalFormed.textContent = band.formed;
-        modalMembers.textContent = band.members;
-        modalOrigin.textContent = band.origin;
-        modalHit.textContent = band.hit;
-        modalNum.textContent = band.num + " / 005";
-        modal.classList.add("active");
-    });
-});
-
 closeBtn.addEventListener("click", function() {
     modal.classList.remove("active");
 });
@@ -120,3 +149,5 @@ modal.addEventListener("click", function(e) {
         modal.classList.remove("active");
     }
 });
+
+renderBands();
