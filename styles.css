@@ -505,9 +505,9 @@ h5 {
 
 /* ===== MAGAZINE ARTICLE ===== */
 .article-section {
-    margin-top: 30px;
-    padding-top: 24px;
-    border-top: 4px double #ff69b4;
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+    border-bottom: 4px double #ff69b4;
 }
 
 .article-tag {
