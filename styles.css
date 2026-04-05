@@ -2,8 +2,16 @@
 .css-sticker {
     position: fixed;
     z-index: 501;
-    pointer-events: none;
+    pointer-events: auto;
     user-select: none;
+    transition: filter 0.3s ease;
+}
+
+.css-sticker:hover {
+    filter:
+        drop-shadow(0 0 6px rgba(255,255,255,0.95))
+        drop-shadow(0 0 14px rgba(255,255,255,0.75))
+        drop-shadow(0 0 26px rgba(255,255,255,0.5));
 }
 
 @media (max-width: 768px) {
@@ -73,115 +81,6 @@
     z-index: 2;
 }
 
-/* ===== PLATFORM SHOE ===== */
-.shoe-sticker {
-    bottom: 28%;
-    left: 4%;
-    transform: rotate(10deg);
-}
-
-.shoe-upper {
-    width: 64px;
-    height: 34px;
-    background: #ff1493;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 60% 20% 0 0 / 100% 60% 0 0;
-    position: relative;
-    z-index: 1;
-    margin-left: 8px;
-}
-
-.shoe-sole {
-    width: 80px;
-    height: 22px;
-    background: #fff;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 6px 8px 10px 6px;
-    margin-top: -4px;
-    position: relative;
-    z-index: 0;
-}
-
-/* ===== MICROPHONE ===== */
-.mic-sticker {
-    top: 60%;
-    right: 4%;
-    transform: rotate(-8deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mic-head {
-    width: 38px;
-    height: 46px;
-    background: #d0d0d0;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 50% 50% 40% 40%;
-}
-
-.mic-grip {
-    width: 18px;
-    height: 10px;
-    background: #555;
-    border-left: 4px solid #000;
-    border-right: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 2px 0 0 2px #fff, -2px 0 0 2px #fff;
-    margin-top: -2px;
-}
-
-.mic-handle {
-    width: 16px;
-    height: 38px;
-    background: #ff1493;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 3px;
-    margin-top: -2px;
-}
-
-/* ===== RED LIPS ===== */
-.lips-sticker {
-    bottom: 6%;
-    left: 4%;
-    transform: rotate(-5deg);
-}
-
-.lips-wrap {
-    position: relative;
-    width: 62px;
-    height: 44px;
-    filter:
-        drop-shadow(0 3px 0 #fff) drop-shadow(3px 0 0 #fff)
-        drop-shadow(0 -3px 0 #fff) drop-shadow(-3px 0 0 #fff)
-        drop-shadow(2px 2px 0 #fff) drop-shadow(-2px -2px 0 #fff)
-        drop-shadow(0 6px 0 #000) drop-shadow(6px 0 0 #000)
-        drop-shadow(0 -6px 0 #000) drop-shadow(-6px 0 0 #000)
-        drop-shadow(4px 4px 0 #000) drop-shadow(-4px -4px 0 #000);
-}
-
-.lip-tl, .lip-tr {
-    position: absolute;
-    width: 31px;
-    height: 24px;
-    background: #ee0000;
-    top: 0;
-}
-.lip-tl { border-radius: 50% 8px 0 0; left: 0; }
-.lip-tr { border-radius: 8px 50% 0 0; right: 0; }
-
-.lip-bot {
-    position: absolute;
-    width: 62px;
-    height: 30px;
-    background: #cc0000;
-    border-radius: 0 0 50% 50%;
-    bottom: 0;
-}
-
 /* ===== SMILEY FACE ===== */
 .smiley-sticker {
     top: 76%;
@@ -230,9 +129,17 @@
     transform: translateY(-50%) rotate(-8deg);
     z-index: 501;
     width: 72px;
-    pointer-events: none;
+    pointer-events: auto;
     user-select: none;
     filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.7));
+    transition: filter 0.3s ease;
+}
+
+.alien-sticker:hover {
+    filter:
+        drop-shadow(0 0 6px rgba(255,255,255,0.95))
+        drop-shadow(0 0 14px rgba(255,255,255,0.75))
+        drop-shadow(0 0 26px rgba(255,255,255,0.5));
 }
 
 .alien-head {
