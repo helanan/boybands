@@ -81,6 +81,176 @@
     z-index: 2;
 }
 
+/* ===== LADYBUG ===== */
+.ladybug-sticker {
+    top: 28%;
+    right: 4%;
+    transform: rotate(12deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ladybug-head {
+    width: 28px;
+    height: 24px;
+    background: #111;
+    border: 3px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.ladybug-antenna {
+    position: absolute;
+    width: 3px;
+    height: 14px;
+    background: #111;
+    border-radius: 2px;
+    top: -12px;
+}
+.la-l { left: 6px;  transform: rotate(-15deg); }
+.la-r { right: 6px; transform: rotate(15deg); }
+
+.ladybug-body {
+    width: 44px;
+    height: 50px;
+    background: #ee0000;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+    border-radius: 50% 50% 50% 50% / 38% 38% 62% 62%;
+    position: relative;
+    margin-top: -5px;
+    z-index: 1;
+}
+
+.ladybug-line {
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: #000;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ladybug-dot {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #000;
+    border-radius: 50%;
+}
+.ld1 { top: 8px;  left: 5px; }
+.ld2 { top: 8px;  right: 5px; }
+.ld3 { top: 24px; left: 5px; }
+.ld4 { top: 24px; right: 5px; }
+
+/* ===== BUTTERFLY ===== */
+.butterfly-sticker {
+    top: 50%;
+    right: 4%;
+    transform: rotate(-12deg);
+    width: 68px;
+    height: 58px;
+}
+
+.bfly-wing {
+    position: absolute;
+    border: 3px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+}
+
+.bfly-tl {
+    width: 32px; height: 30px;
+    background: #ff69b4;
+    border-radius: 50% 10% 30% 50%;
+    top: 2px; left: 2px;
+}
+.bfly-tr {
+    width: 32px; height: 30px;
+    background: #da70d6;
+    border-radius: 10% 50% 50% 30%;
+    top: 2px; right: 2px;
+}
+.bfly-bl {
+    width: 26px; height: 22px;
+    background: #FFE600;
+    border-radius: 50% 20% 40% 50%;
+    bottom: 2px; left: 8px;
+}
+.bfly-br {
+    width: 26px; height: 22px;
+    background: #ff8c00;
+    border-radius: 20% 50% 50% 40%;
+    bottom: 2px; right: 8px;
+}
+
+.butterfly-body {
+    position: absolute;
+    width: 10px;
+    height: 46px;
+    background: #6c0099;
+    border: 3px solid #000;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+    border-radius: 5px;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+/* ===== MUSIC NOTE ===== */
+.note-sticker {
+    top: 70%;
+    right: 4%;
+    transform: rotate(8deg);
+    width: 44px;
+    height: 72px;
+}
+
+.note-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter:
+        drop-shadow(0 3px 0 #fff) drop-shadow(3px 0 0 #fff)
+        drop-shadow(0 -3px 0 #fff) drop-shadow(-3px 0 0 #fff)
+        drop-shadow(0 5px 0 #000) drop-shadow(5px 0 0 #000)
+        drop-shadow(0 -5px 0 #000) drop-shadow(-5px 0 0 #000);
+}
+
+.note-head {
+    position: absolute;
+    width: 28px;
+    height: 20px;
+    background: #ff1493;
+    border-radius: 50%;
+    transform: rotate(-20deg);
+    bottom: 0;
+    left: 0;
+}
+
+.note-stem {
+    position: absolute;
+    width: 5px;
+    height: 56px;
+    background: #ff1493;
+    border-radius: 3px;
+    bottom: 10px;
+    right: 4px;
+}
+
+.note-flag {
+    position: absolute;
+    width: 22px;
+    height: 24px;
+    background: #ff1493;
+    border-radius: 0 50% 50% 0;
+    top: 0;
+    right: 4px;
+}
+
 /* ===== SMILEY FACE ===== */
 .smiley-sticker {
     top: 76%;
