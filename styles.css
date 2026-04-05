@@ -2,8 +2,16 @@
 .css-sticker {
     position: fixed;
     z-index: 501;
-    pointer-events: none;
+    pointer-events: auto;
     user-select: none;
+    transition: filter 0.3s ease;
+}
+
+.css-sticker:hover {
+    filter:
+        drop-shadow(0 0 6px rgba(255,255,255,0.95))
+        drop-shadow(0 0 14px rgba(255,255,255,0.75))
+        drop-shadow(0 0 26px rgba(255,255,255,0.5));
 }
 
 @media (max-width: 768px) {
@@ -73,115 +81,6 @@
     z-index: 2;
 }
 
-/* ===== PLATFORM SHOE ===== */
-.shoe-sticker {
-    bottom: 28%;
-    left: 4%;
-    transform: rotate(10deg);
-}
-
-.shoe-upper {
-    width: 64px;
-    height: 34px;
-    background: #ff1493;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 60% 20% 0 0 / 100% 60% 0 0;
-    position: relative;
-    z-index: 1;
-    margin-left: 8px;
-}
-
-.shoe-sole {
-    width: 80px;
-    height: 22px;
-    background: #fff;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 6px 8px 10px 6px;
-    margin-top: -4px;
-    position: relative;
-    z-index: 0;
-}
-
-/* ===== MICROPHONE ===== */
-.mic-sticker {
-    top: 60%;
-    right: 4%;
-    transform: rotate(-8deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mic-head {
-    width: 38px;
-    height: 46px;
-    background: #d0d0d0;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 50% 50% 40% 40%;
-}
-
-.mic-grip {
-    width: 18px;
-    height: 10px;
-    background: #555;
-    border-left: 4px solid #000;
-    border-right: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 2px 0 0 2px #fff, -2px 0 0 2px #fff;
-    margin-top: -2px;
-}
-
-.mic-handle {
-    width: 16px;
-    height: 38px;
-    background: #ff1493;
-    border: 4px solid #000;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
-    border-radius: 3px;
-    margin-top: -2px;
-}
-
-/* ===== RED LIPS ===== */
-.lips-sticker {
-    bottom: 6%;
-    left: 4%;
-    transform: rotate(-5deg);
-}
-
-.lips-wrap {
-    position: relative;
-    width: 62px;
-    height: 44px;
-    filter:
-        drop-shadow(0 3px 0 #fff) drop-shadow(3px 0 0 #fff)
-        drop-shadow(0 -3px 0 #fff) drop-shadow(-3px 0 0 #fff)
-        drop-shadow(2px 2px 0 #fff) drop-shadow(-2px -2px 0 #fff)
-        drop-shadow(0 6px 0 #000) drop-shadow(6px 0 0 #000)
-        drop-shadow(0 -6px 0 #000) drop-shadow(-6px 0 0 #000)
-        drop-shadow(4px 4px 0 #000) drop-shadow(-4px -4px 0 #000);
-}
-
-.lip-tl, .lip-tr {
-    position: absolute;
-    width: 31px;
-    height: 24px;
-    background: #ee0000;
-    top: 0;
-}
-.lip-tl { border-radius: 50% 8px 0 0; left: 0; }
-.lip-tr { border-radius: 8px 50% 0 0; right: 0; }
-
-.lip-bot {
-    position: absolute;
-    width: 62px;
-    height: 30px;
-    background: #cc0000;
-    border-radius: 0 0 50% 50%;
-    bottom: 0;
-}
-
 /* ===== SMILEY FACE ===== */
 .smiley-sticker {
     top: 76%;
@@ -230,9 +129,17 @@
     transform: translateY(-50%) rotate(-8deg);
     z-index: 501;
     width: 72px;
-    pointer-events: none;
+    pointer-events: auto;
     user-select: none;
     filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.7));
+    transition: filter 0.3s ease;
+}
+
+.alien-sticker:hover {
+    filter:
+        drop-shadow(0 0 6px rgba(255,255,255,0.95))
+        drop-shadow(0 0 14px rgba(255,255,255,0.75))
+        drop-shadow(0 0 26px rgba(255,255,255,0.5));
 }
 
 .alien-head {
@@ -594,6 +501,119 @@ h5 {
     color: #ff1493;
     width: 60px;
     flex-shrink: 0;
+}
+
+/* ===== MAGAZINE ARTICLE ===== */
+.article-section {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 4px double #ff69b4;
+}
+
+.article-tag {
+    display: inline-block;
+    font-family: 'Bangers', cursive;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    background: #ff1493;
+    color: #FFE600;
+    padding: 3px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.article-headline {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: #6c0099;
+    text-shadow: 2px 2px 0 #ff69b4;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    margin: 6px 0 8px !important;
+}
+
+.article-byline {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.78rem;
+    color: #aaa;
+    border-bottom: 2px dashed #ff69b4;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.article-body p {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.98rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.drop-cap {
+    float: left;
+    font-family: 'Bangers', cursive;
+    font-size: 3.8rem;
+    line-height: 0.75;
+    padding-right: 8px;
+    padding-top: 6px;
+    color: #ff1493;
+    text-shadow: 2px 2px 0 #da70d6;
+}
+
+.pull-quote {
+    font-family: 'Bangers', cursive;
+    font-size: 1.3rem;
+    color: #9b59b6;
+    letter-spacing: 1px;
+    border-left: 5px solid #ff1493;
+    border-right: 5px solid #ff1493;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 18px 0;
+    background: linear-gradient(135deg, #fff0f8, #f5f0ff);
+    border-radius: 8px;
+}
+
+.article-sidebar {
+    float: right;
+    width: 42%;
+    background: #FFE600;
+    border: 3px solid #ff1493;
+    border-radius: 12px;
+    padding: 14px;
+    margin: 0 0 14px 18px;
+    box-shadow: 4px 4px 0 #9b59b6;
+}
+
+.sidebar-title {
+    font-family: 'Bangers', cursive;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #ff1493;
+    margin-bottom: 8px;
+}
+
+.article-sidebar p {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.85rem !important;
+    color: #555 !important;
+    margin-bottom: 6px !important;
+}
+
+.sidebar-disclaimer {
+    font-size: 0.7rem !important;
+    color: #aaa !important;
+    font-style: italic;
+}
+
+.article-sign-off {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    color: #ff1493;
+    border-top: 2px dashed #ff69b4;
+    padding-top: 12px;
+    margin-top: 8px;
+    clear: both;
 }
 
 /* ===== VEGETABLE LIST ===== */
